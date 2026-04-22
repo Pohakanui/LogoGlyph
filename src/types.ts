@@ -13,4 +13,17 @@ export interface GlyphData {
   createdAt: number;
 }
 
+export interface SynthesisParams {
+  abstraction: number;
+  density: number;
+  curvature: number;
+  theme: GlyphTheme;
+  material: GlyphMaterial;
+  color: string;
+  showParticles: boolean;
+  particleSpeed: number;
+  humSpeed: number;
+}
+
 export type GlyphTheme = 'minimal' | 'mystic' | 'technical' | 'organic';
+export type GlyphMaterial = 'chrome' | 'neon' | 'holographic';
