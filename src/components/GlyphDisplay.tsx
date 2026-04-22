@@ -63,6 +63,7 @@ export default function GlyphDisplay({
           strokeWidth: 0.6,
           stroke: activeStroke,
           glow: intenseGlow,
+          pathFilter: "none",
           dash: "",
           decorOpacity: 0.05,
         };
@@ -71,6 +72,7 @@ export default function GlyphDisplay({
           strokeWidth: 1.2,
           stroke: activeStroke,
           glow: intenseGlow,
+          pathFilter: "none",
           dash: "",
           decorOpacity: 0.2,
         };
@@ -79,14 +81,16 @@ export default function GlyphDisplay({
           strokeWidth: 0.6,
           stroke: activeStroke,
           glow: intenseGlow,
+          pathFilter: "none",
           dash: "",
           decorOpacity: 0.15,
         };
       case 'organic':
         return {
-          strokeWidth: 1.8,
+          strokeWidth: 2.0,
           stroke: activeStroke,
           glow: intenseGlow,
+          pathFilter: "blur(1px)",
           dash: "",
           decorOpacity: 0.1,
         };
@@ -95,6 +99,7 @@ export default function GlyphDisplay({
           strokeWidth: 0.8,
           stroke: activeStroke,
           glow: intenseGlow,
+          pathFilter: "none",
           dash: "",
           decorOpacity: 0.1,
         };
@@ -311,6 +316,7 @@ export default function GlyphDisplay({
                 fill="none"
                 stroke={styles.stroke}
                 strokeWidth={styles.strokeWidth}
+                style={{ filter: styles.pathFilter as any }}
                 strokeLinecap={theme === 'organic' ? 'round' : 'square'}
                 strokeLinejoin={theme === 'organic' ? 'round' : 'miter'}
                 initial={{ pathLength: 0, opacity: 0 }}
